@@ -12,16 +12,16 @@
         <div class="small-6 columns">
             <h1 class="text-center">YOU</h1>
             <div class="healthbar">
-                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                <div class="healthbar--content text-center" :style="{width: healthbarWidthOne + 'px'}">
+                    <p>{{healthbarWidthOne }}</p>
                 </div>
             </div>
         </div>
         <div class="small-6 columns">
             <h1 class="text-center">MONSTER</h1>
             <div class="healthbar">
-                <div class="healthbar text-center" style="background-color: green; margin: 0; color: white;">
-
+                <div class="healthbar--content text-center" :style="{width: healthbarWidthTwo + 'px'}">
+                    <p>{{healthbarWidthTwo}}</p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
     </section>
     <section class="row controls">
         <div class="small-12 columns">
-            <button id="attack">ATTACK</button>
+            <button id="attack" @click="attack">ATTACK</button>
             <button id="special-attack">SPECIAL ATTACK</button>
             <button id="heal">HEAL</button>
             <button id="give-up">GIVE UP</button>
@@ -41,13 +41,16 @@
     </section>
     <section class="row log">
         <div class="small-12 columns">
-            <ul>
-                <li>
-
+            <ul class="outcome">
+                <li v-for="point in hitPoints">
+                    {{ point }}
                 </li>
             </ul>
         </div>
     </section>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

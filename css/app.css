@@ -3,13 +3,24 @@
 }
 
 .healthbar {
-    width: 80%;
+    width: 90%;
     height: 40px;
     background-color: #eee;
-    margin: auto;
-    transition: width 500ms;
 }
 
+.healthbar--content {
+    height: 100%;
+    background-color: green; 
+    margin: 0; 
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 500ms;    
+}
+.healthbar--content p {
+    margin: 0;
+}
 .controls, .log {
     margin-top: 30px;
     text-align: center;
@@ -91,4 +102,18 @@ button {
 
 #give-up:hover {
     background-color: #c7c7c7;
+}
+
+.outcome li {
+    padding: 7px 0;
+}
+
+.outcome li:nth-child(even) {
+    background-color: rgb(253, 63, 63);
+    color: rgb(245, 170, 170);
+}
+
+.outcome li:nth-child(odd) {
+    background-color: rgb(63, 199, 253);
+    color: rgb(22, 1, 70);
 }
