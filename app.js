@@ -20,6 +20,18 @@ new Vue({
             this.hitPoints.push('Player hits monster for ' + randomNumberTwo);
             this.playerHealth -= randomNumberOne;
             this.monsterHealth -= randomNumberTwo;
+
+            if (this.playerHealth <= 0) {
+                alert('You lost!');
+                this.gameIsRunning = false;
+                return;
+            }
+            if (this.monsterHealth <= 0) {
+                alert('You won!');
+                this.gameIsRunning = false;
+                return;
+            }
+
         },
         heal() {
             let randomNumberOne = Math.floor(Math.random() * 10) + 11;
