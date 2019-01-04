@@ -15,9 +15,12 @@ new Vue({
         },
         attack() {
             this.monsterHealth -= this.calculateDamage(3,10);
-            this.playerHealth -= this.calculateDamage(5,12);
-            this.checkWin();
+            this.monsterAttacks();
 
+        },
+        specialAttack() {
+            this.monsterHealth -= this.calculateDamage(10, 20);
+            this.monsterAttacks();
         },
         heal() {
             this.playerHealth += this.calculateDamage(5,12);
