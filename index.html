@@ -39,11 +39,11 @@
                 <button id="give-up" @click="gameIsRunning = !gameIsRunning">GIVE UP</button>
         </div>
     </section>
-    <section class="row log">
+    <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
             <ul class="outcome">
-                <li v-for="point in hitPoints">
-                    {{ point }}
+                <li v-for="turn in turns">
+                    {{ turn.text }}
                 </li>
             </ul>
         </div>
